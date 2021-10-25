@@ -1,0 +1,26 @@
+@startuml
+
+class Application{
+    start()
+    main()
+}
+
+class viewListController(){
+    Button add
+    DatePicker date
+    TextField name
+
+    addTask()
+    goToList()
+}
+
+class viewAllController(){
+    Button NewListButton
+    TextField NewListName
+    ListView list
+
+    addList()
+    goToList()
+}
+
+@enduml
