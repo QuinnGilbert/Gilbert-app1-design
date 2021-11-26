@@ -1,26 +1,50 @@
 @startuml
 
-class Application{
-    start()
-    main()
+Item--*viewListController
+
+class Item{
+    String description
+    String dueDate
+    CheckBox checked
+
+    String getDescription()
+    void setDescription()
+
+    String getDueDate()
+    void setDueDate()
+
+    CheckBox getCheckBox()
+    void setCheckBox()
 }
 
-class viewListController(){
-    Button add
-    DatePicker date
-    TextField name
-
-    addTask()
-    goToList()
+class TodoListApplication{
+    void start()
+    void main()
 }
 
-class viewAllController(){
-    Button NewListButton
-    TextField NewListName
-    ListView list
+class viewListController{
+    Button addButton
+    Button clearButton
+    Button hideCompleteButton
+    Button hideIncompleteButton
+    TextField addDescription
+    DatePicker addDate
 
-    addList()
-    goToList()
+    TableView<Item> table
+    ObservableList<Item> data
+
+    clearAll()
+    save()
+    load()
+
+    showAll()
+    showComplete()
+    showIncomplete()
+
+    remove()
+    addItem()
+
+    initialize()
 }
 
 @enduml
